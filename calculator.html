@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+    <script src="calculator.js"></script>
+
+</head>
+<body>
+
+<div class="calculator">
+    <input id="display" readonly>
+
+    <div class="buttons">
+
+        <button class="operator" onclick="appendtodisplay('**')">^</button>
+        <button class="operator" onclick="appendtodisplay('%')">%</button>
+        <button class="operator" onclick="slice()">⌫</button>
+        <button class="operator" onclick="clearthescreen()">C</button>
+
+        <button onclick="appendtodisplay(7)" >7</button>
+        <button onclick="appendtodisplay(8)" >8</button>
+        <button onclick="appendtodisplay(9)">9</button>
+        <button class="operator" onclick="appendtodisplay('/')" >÷</button>
+        
+        <button onclick="appendtodisplay(4)" >4</button>
+        <button onclick="appendtodisplay(5)" >5</button>
+        <button onclick="appendtodisplay(6)" >6</button>
+        <button class="operator" onclick="appendtodisplay('*')" >×</button>        
+
+        <button onclick="appendtodisplay(1)" >1</button>
+        <button onclick="appendtodisplay(2)" >2</button>
+        <button onclick="appendtodisplay(3)" >3</button>
+        <button class="operator" onclick="appendtodisplay('+')" >+</button>     
+
+        <button onclick="appendtodisplay(0)" >0</button>
+        <button onclick="appendtodisplay('.')">.</button>
+        <button class="operator" onclick="appendtodisplay('-')" >−</button>
+        <button class="equals" onclick="calculate()" >=</button>
+    </div>
+</div>
+<style>
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #1e1e1e;
+    font-family: Arial, sans-serif;
+}
+
+.calculator {
+    background: #2c2c2c;
+    padding: 20px;
+    border-radius: 15px;
+    width: 280px;
+}
+
+#display {
+    width: clamp(80%, 90%, 95%);
+    height: 50px;
+    margin-bottom: 15px;
+    text-align: right;
+    font-size: 24px;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    background: #000;
+    color: #0f0;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+button {
+    height: 55px;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    background: #444;
+    color: white;
+}
+
+button:hover {
+    background: #555;
+}
+
+.operator {
+    background: #ff9500;
+}
+
+.operator:hover {
+    background: #e08900;
+}
+
+.equals {
+    grid-row: span 2;
+    background: #34c759;
+}
+
+.equals:hover {
+    background: #2ea94f;
+}
+</style>
+<script>
+    function appendtodisplay(value) {
+        document.getElementById('display').value += value;
+    }
+
+    function clearthescreen() {
+        document.getElementById('display').value = "";
+    }
+
+    function calculate() {
+        try {
+            const result = eval(document.getElementById('display').value);
+            document.getElementById('display').value = result;
+        } catch (e) {
+            document.getElementById('display').value = 'Error';
+        }
+    }
+    function slice(){
+        let value=document.getElementById("display").value;
+        document.getElementById("display").value=value.slice(0,-1);
+    }
+    </script>
+</body>
+</html>

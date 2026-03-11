@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Callback Example</title>
+    </head>
+    <body>
+        
+        <h2>Callback Example</h2>
+        <button onclick="getUser()">Get user</button>
+        <p id="output"> </p>
+        <script>
+            // callback is a function to be passsed
+            function fetchUser(callback){
+                setTimeout(()=>{
+                    const user ={ name:"Deepak", age:28};
+                    callback(user);
+                },2000);
+            };
+            
+            function getUser(){
+                document.getElementById("output").innerText="Loading...";
+                
+                //function(user) is a function with a parameter that is to be callbacked
+                fetchUser(function(user){
+                    document.getElementById("output").innerText="Name: "+user.name+", Age: "+user.age;
+                });
+            }
+        </script>
+    </body>
+</html>

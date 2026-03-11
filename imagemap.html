@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Map Example</title>
+    </head>
+    <body>
+        <h2> Server-side Image Map</h2>
+        <p> Click anywhere in the imgae</p>
+        <a href="https://www.example.com">
+        <img src="https://www.w3schools.com/html/img_chania.jpg" alt="chanita" ismap>
+        </a>
+            <hr>
+            <h2>  Client-Side Image map(usemap)</h2>
+            <p>click different parts of the imAGE</p>
+            <img src="https://www.w3schools.com/html/img_chania.jpg" alt="chanita" usemap="#chania-map">
+
+            <map name="chania-map">
+                <area shape="rect" coords="34,44,270,350" alt="House" href="https://www.example.com/house">
+                <area shape="circle" coords="337,300,44" alt="Tree" href="https://www.example.com/tree">
+                <area shape="poly" coords="290,172,333,250,300,330,250,300,200,330,170,250,220,172" alt="Mountain" href="https://www.example.com/mountain">
+    </body>
+</html>

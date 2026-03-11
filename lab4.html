@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>DOM manipulation</title>
+        <script src="jquery-4.0.0.js"></script>
+        <style>
+            .active{
+                color: whitesmoke;
+                background: GREEn;
+                padding:5px;
+                margin: 0 auto;
+            }
+        </style>
+    </head>
+    <body>
+        <p id="para">Original Text</p>
+        <input type="text" id="name" placeholder="Enter your name">
+        <br><br>
+        <button id="changeText"> Change Text</button>
+        <button id="addClass"> Toggle Class</button>
+        <script>
+            $(function(){
+                $("#changeText").click(function(){
+                    $('#para').text("Text chnaged using jQuery");
+                    $('#name').val("John Doe");
+
+                });
+                $('#addClass').click(function(){
+                    $("#para").toggleClass("active");
+                });
+            });
+            
+        </script>
+    </body>
+</html>

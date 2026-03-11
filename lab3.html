@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>jQuery Selectors Example</title>
+    <script src="jquery-4.0.0.js"></script>
+</head>
+<body>
+    <h1 id="title">Welcome</h1>
+    <p> This is paragraph</p>
+    <p> This is paragraph 1</p>
+    <button id="btn">Change Text Color</button>
+    
+    <script>
+        $(document).ready(function(){
+            $("#btn").click(function(){
+                $("p").css("color","blue");
+                $("#title".css("color","blue"));
+            });
+        });
+    </script>
+</body>
+</html>

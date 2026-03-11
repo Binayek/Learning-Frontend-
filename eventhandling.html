@@ -1,0 +1,59 @@
+<!DOCTYPE html> 
+<html>
+<head>
+    <title>Event handling</title>
+    <style>
+        body{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .hover-box{
+                width:200px;
+                height:100px;
+                background:lightblue;
+                text-align: center;
+                line-height: 100px;
+                border-radius: 8px;
+                margin-bottom: 20px;
+                transition: 0.3s;
+        }
+    </style>
+</head>
+<body>
+    <h2>Javascript Event hnadling Examples</h2>
+    <p id="loading"></p>
+    <div class="hover-box" id="hoverBox">Hover Over me</div>
+    <button id="clickBtn">CLick Me</button>
+    <p id="Mouseoutput"></p>
+    <hr>
+
+    <label> Type Something: <input type="text" id="textinput"></label>
+    <p id="keyoutput"></p>
+
+    <hr>
+    <form id="sampleform">
+        <label>Email: <input type="email" id="emailfield"></label>
+        <button type="submit">Submit</button>
+    </form>
+    <p id="formoutput"></p>
+
+    <script>
+    window.addEventListener("load", function () {
+        document.getElementById("loading").textContent =
+            "Window load event: page is fully loaded";
+    });
+
+    const box = document.getElementById("hoverBox");
+    const mouseOutput = document.getElementById("Mouseoutput");
+
+    box.addEventListener("mouseover", function () {
+        box.style.backgroundColor = "lightgreen";
+        mouseOutput.textContent = "Mouse is over the box";
+    });
+
+    box.addEventListener("mouseout", function () {
+        box.style.backgroundColor = "lightblue";
+        mouseOutput.textContent = "Mouse left the box";
+    });
+</script>
+</body>
+</html>

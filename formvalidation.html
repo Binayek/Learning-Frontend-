@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Form Validation</title>
+        <style></style>
+    </head>
+    <body>
+         <form action="submit_form.php" method="post" enctype="multipart/form-data" style="font-size: small; font-family: Arial, sans-serif; display:flex; flex-direction:column; align-content:flex-start; gap:10px; width:300px; background-color: silver; padding:20px; border-radius:8px; gap:10px;">
+           <fieldset>
+            <legend>Personal Information</legend>
+            <label>First Name:</label>
+            <input type="text" name="first_name" required><br><br>
+            <label>Last Name:</label>
+            <input type="text" name="last_name" required><br><br>
+            <label>Email:</label>
+            <input type="email" name="email" required><br><br>
+            <label>Password:</label>
+            <input type="password" id="password" required><br><br>
+            <p id="error_message" style="color:red;"></p>
+            <label>age</label>
+            <input type="number" name="age" id="age" required><br><br>
+            <p id="error_message1" style="color:red;"></p>
+        </fieldset>
+           <fieldset>
+            <legend>Upload</legend>
+            <label>Profile Pic</label>
+            <input type="file" name="profile_pic" accept="image/*" required><br><br>
+           </fieldset>
+           <input type="submit" id="Register">
+           <input type="reset" id="Reset">
+        </form>
+        <script>
+            
+            document.getElementById("password").addEventListener("input", function() {
+                let password = this.value;
+                let errorMessage = "";
+                if (password.length < 8) {
+                    errorMessage = "Password must be at least 8 characters long.";
+                } else if (!/[A-Z]/.test(password)) {
+                    errorMessage = "Password must contain at least one uppercase letter.";
+                } else if (!/[a-z]/.test(password)) {
+                    errorMessage = "Password must contain at least one lowercase letter.";
+                } else if (!/[0-9]/.test(password)) {
+                    errorMessage = "Password must contain at least one digit.";
+                }
+                document.getElementById("error_message").innerText = errorMessage;
+            });
+            document.getElementById("age").addEventListener("input", function(){
+                let age=parseInt(this.value);
+                if(age>120){
+                    errorMessage1="invalid age"
+                }
+                document.getElementById("error_message1").innerText=errorMessage1;
+            });
+           </script>
+          <style>
+            
+            #Register:hover{
+                background-color: lightblue;
+                border-radius: 12px;
+                cursor: pointer;
+            }
+            #Reset:hover{
+                background-color: lightblue;
+                border-radius: 12px;
+                cursor: pointer;
+            }
+          </style>
+    </body>
+</html>

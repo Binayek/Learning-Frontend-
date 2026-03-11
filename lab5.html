@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>jQuery Effects</title>
+        <script src="jquery-4.0.0.js"></script>
+        <style>
+            #box{
+                width:200px;
+                height:200px;
+                background: skyblue;
+                margin:20px;
+            }
+        </style>
+    </head>
+    <body>
+        <button id="hide">Hide</button>
+        <button id="show">show</button>
+        <button id="Fade">fade</button>
+        <button id="slide">slide</button>
+        <div id="box"></div>
+        <script>
+            $(function(){
+                $("#hide").click(function(){
+                    $("#box").hide();
+                });
+                $("#show").click(function(){
+                    $("#box").show();
+                });
+                $("#Fade").click(function(){
+                    $("#box").fadeOut();
+                });
+                $("#slide").click(function(){
+                    $("#box").slideToggle();
+                });
+            })
+        </script>
+    </body>
+</html>

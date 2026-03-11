@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>List</title>
+    </head>
+    <body>
+        <main>
+            <h1>List of Items</h1>
+            <ul>
+                <li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+                <li>Item 4</li>
+                <li>Item 5</li>
+            </ul>
+            <h1> Ranked list</h1>
+            <ol type="1">
+                <li>First Item</li>
+                <li>Second Item</li>
+                <li>Third Item</li>
+                <li>Fourth Item</li>
+                <li>Fifth Item</li>
+            </ol>
+
+            <h2>Description List</h2>
+            <dl>
+                <dt>HTML</dt>
+                <dd>A markup language for creating web pages.</dd>
+                <dt>CSS</dt>
+                <dd>A style sheet language used for describing the presentation of a document.</dd>
+                <dt>JavaScript</dt>
+                <dd>A programming language commonly used in web development.</dd>
+            </dl>
+
+            <h2>Nested Lists</h2>
+            <ol>
+                <li>First Item</li>
+                <ul>
+                    <li>Subitem 1</li>
+                    <li>Subitem 2</li>
+                    <li>Subitem 3</li>
+                </ul>
+                <li>Second Item</li>
+                    <ul>
+                        <li>Subitem 1</li>
+                        <li>Subitem 2</li>
+                        <li>Subitem 3</li>
+                    </ul>
+                <li>Third Item</li>
+                <li>Fourth Item</li>
+                <li>Fifth Item</li>
+            </ol>
+            
+        </main>
+    </body>
+    <style>
+        body{
+        justify-content: center;
+        align-items: center;
+        display: flex;
+    }
+    main {
+        width: 100%;
+        margin-top: 20px;
+        height:auto;
+        max-width: 600px;
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        background: #dbfc07;
+        color: rgb(0, 0, 0);
+        font-family: Arial, sans-serif;
+        padding-left: 10px;
+    }
+    ul, ol {
+        justify-content: left;
+        text-align: left;
+    }
+    </style>
+</html>
